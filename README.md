@@ -65,3 +65,17 @@ node dist/index.js https://example.com/slow --timeout 5000 --retries 0
 - `0` — хотя бы один запрос прошёл
 - `1` — все провалились
 - `2` — кривые аргументы (нет URL, не парсится, отрицательный `--count` и т.п.)
+
+## Как это выглядит
+
+CLI — Cloudflare 2 MB и редирект google.com → www:
+
+![вывод CLI](docs/screen1.jpg)
+
+UI, серия из десяти запросов:
+
+![SPEED/O/METER, успешный прогон](docs/screen2.png)
+
+Wikimedia иногда отвечает 429, первые два успели, остальные нет — скорость считается только по живым:
+
+![SPEED/O/METER, часть запросов с 429](docs/screen3.png)
